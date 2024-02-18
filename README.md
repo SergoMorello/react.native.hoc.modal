@@ -4,27 +4,10 @@
 
 ## install
 ```
-npm i react-hoc-modal
-
-// if you use typescript install types
-npm i @types/react@{this you react version} @types/react-dom@{this you react version} -D
+npm i react-native-hoc-modal
 ```
 
 ### Examples
-
-#### Mount modal provider
-```js
-// index.js
-import Modal from 'react-hoc-modal';
-...
-root.render(
-  <React.StrictMode>
-	<Modal.Provider SPA>
-		<App />
-	</Modal.Provider>
-  </React.StrictMode>
-);
-```
 
 #### Create modal component
 ```js
@@ -34,13 +17,12 @@ import Modal from 'react-hoc-modal';
 
 const MyFirstModal = () => {
 
-	return(<div>Hello, i am you first modal component</div>);
+	return(<View>
+		<Text>Hello, i am you first modal component</Text>
+	</View>);
 };
 
-export default Modal.withModal(MyFirstModal,{
-	title: 'Easy modal',
-	theme: 'light'
-});
+export default Modal.withModal(MyFirstModal);
 ```
 
 #### Mount modal component
@@ -60,7 +42,7 @@ const App = () => {
 
 #### Use modal component
 ```js
-<button onClick={MyFirstModal.show}>Show my first modal</button>
+<Button onPress={MyFirstModal.show} title="Show my first modal"/>
 ```
 
 #### If you need update data without 'props', you can use the 'setState' method.
@@ -73,6 +55,8 @@ MyFirstModal.setState({testData: 'Hello'});
 const MyFirstModal = () => {
 	const {state} = Modal.useModal();
 
-	return(<div>{state?.testData}</div>);
+	return(<View>
+		<Text>{state?.testData}</Text>
+	</View>);
 };
 ```
