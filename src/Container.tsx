@@ -93,7 +93,7 @@ const Container = forwardRef<TModal, TProps>((props, ref) => {
 	return(
 			<>
 			{isShow &&
-				<Modal transparent={transparent} animationType={effect} statusBarTranslucent={statusBarTranslucent}>
+				<Modal onRequestClose={hide} transparent={transparent} animationType={effect} statusBarTranslucent={statusBarTranslucent}>
 					{
 					typeof render === 'function' ? render(renderProps) : <Pressable android_disableSound style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#00000090'}} onPress={backgroundHide}>
 						<View style={[style, {width: '80%', backgroundColor: '#FFFFFF', padding: 10, borderRadius: 3}]}>{children}</View>
