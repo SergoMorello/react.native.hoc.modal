@@ -34,6 +34,10 @@ export type TConfig = {
 
 	statusBarTranslucent?: boolean;
 
+	backdropColor?: string;
+
+	backgroundColor?: string;
+
 	/**
 	 * Styles
 	 */

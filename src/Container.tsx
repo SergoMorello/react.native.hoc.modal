@@ -21,6 +21,8 @@ const Container = forwardRef<TModal, TProps>((props, ref) => {
 	const {
 		children,
 		style,
+		backdropColor = '#00000090',
+		backgroundColor = '#FFFFFF',
 		name,
 		title,
 		transparent = true,
@@ -95,8 +97,8 @@ const Container = forwardRef<TModal, TProps>((props, ref) => {
 			{isShow &&
 				<Modal onRequestClose={hide} transparent={transparent} animationType={effect} statusBarTranslucent={statusBarTranslucent}>
 					{
-					typeof render === 'function' ? render(renderProps) : <Pressable android_disableSound style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#00000090'}} onPress={backgroundHide}>
-						<View style={[style, {width: '80%', backgroundColor: '#FFFFFF', padding: 10, borderRadius: 3}]}>{children}</View>
+					typeof render === 'function' ? render(renderProps) : <Pressable android_disableSound style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: backdropColor}} onPress={backgroundHide}>
+						<View style={[{width: '80%', backgroundColor: backgroundColor, padding: 10, borderRadius: 3}, style]}>{children}</View>
 					</Pressable>
 					}
 				</Modal>

@@ -23,6 +23,8 @@ export type TConfig = {
     hideCloseButton?: boolean;
     transparent?: boolean;
     statusBarTranslucent?: boolean;
+    backdropColor?: string;
+    backgroundColor?: string;
     /**
      * Styles
      */
